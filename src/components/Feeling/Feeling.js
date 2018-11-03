@@ -7,12 +7,12 @@ import {connect} from 'react-redux';
 class Feeling extends Component {
 
     state = {
-        value: null
+        value: 3
     }
 
     handleClick = () => {
         this.props.history.push('/2');
-        this.props.dispatch( { type: 'SET_FEEDBACK', payload: this.state } );
+        this.props.dispatch( { type: 'SET_FEEDBACK', payload: Number(this.state.value) } );
     }
 
     handleChange = (event) => {
@@ -28,7 +28,7 @@ class Feeling extends Component {
                     <h2>How are you feeling today?</h2>
                 </header>
                 <div>
-                    <input onChange={this.handleChange} type="radio" id="feeling1" name="feeling" value={1}/>
+                    <input onChange={this.handleChange} type="radio" id="feeling1" name="feeling" value="1"/>
                     <label htmlFor="feeling1">1</label>
                     <input onChange={this.handleChange} type="radio" id="feeling2" name="feeling" value="2"/>
                     <label  htmlFor="feeling2">2</label>
