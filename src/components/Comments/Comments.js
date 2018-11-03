@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 class Comments extends Component {
 
@@ -18,8 +19,25 @@ class Comments extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.history.push('/5');
-        this.props.dispatch( { type: 'SET_FEEDBACK', payload: this.state.comment });
+        this.addNewFeedback();
     }
+
+    addNewFeedback = () => {
+        let feedback = [...this.props.reduxState.feedbackReducer, this.state.comment]
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: feedback
+        })
+        .then( () => {
+            this.props.dispatch( { type: 'RESET_STATE' } );
+        })
+        .catch( () => {
+            alert('Error submitting feedback');
+        })
+    }
+
+
 
     render() {
         return (
@@ -40,4 +58,6 @@ class Comments extends Component {
   }
 }
 
-export default withRouter(connect()(Comments));
+const mapStateToProps = (reduxState) => ({reduxState});
+
+export default withRouter(connect(mapStateToProps)(Comments));
