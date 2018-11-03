@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ToComments from './ToComments/ToComments';
 
 class Supported extends Component {
   render() {
@@ -18,7 +19,7 @@ class Supported extends Component {
             <label for="supported4">4</label>
             <input type="radio" id="supported5" name="supported" value="5"/>
             <label for="supported5">5</label>
-            <button>Next</button>
+            <ToComments />
         </div>
     </div>   
     );

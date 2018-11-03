@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ToUnderstanding from './ToUnderstanding/ToUnderstanding';
 
 class Feeling extends Component {
   render() {
@@ -18,7 +19,7 @@ class Feeling extends Component {
             <label for="feeling4">4</label>
             <input type="radio" id="feeling5" name="feeling" value="5"/>
             <label for="feeling5">5</label>
-            <button>Next</button>
+            <ToUnderstanding />
         </div>
     </div>   
     );

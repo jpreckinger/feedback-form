@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SubmitButton from './SubmitButton/SubmitButton';
 
 class Comments extends Component {
   render() {
@@ -9,7 +10,7 @@ class Comments extends Component {
         </header>
         <div>
             <input type="text" />
-            <button>Submit</button>
+            <SubmitButton />
         </div>
     </div>   
     );
