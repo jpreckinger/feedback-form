@@ -31,7 +31,7 @@ class Feeling extends Component {
                     <input onChange={this.handleChange} type="radio" id="feeling1" name="feeling" value="1"/>
                     <label htmlFor="feeling1">1</label>
                     <input onChange={this.handleChange} type="radio" id="feeling2" name="feeling" value="2"/>
-                    <label  htmlFor="feeling2">2</label>
+                    <label htmlFor="feeling2">2</label>
                     <input onChange={this.handleChange} type="radio" id="feeling3" name="feeling" value="3" checked/>
                     <label htmlFor="feeling3">3</label>
                     <input onChange={this.handleChange} type="radio" id="feeling4" name="feeling" value="4"/>
