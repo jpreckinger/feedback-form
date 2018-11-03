@@ -10,6 +10,8 @@ import registerServiceWorker from './registerServiceWorker';
 const feedbackReducer = (state = [], action) => {
     if(action.type === 'SET_FEEDBACK'){
         state = [...state, action.payload];
+    } else if ( action.type === 'RESET_STATE'){
+        state = [];
     }
     return state;
 }

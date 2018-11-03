@@ -19,16 +19,15 @@ class Comments extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.history.push('/5');
-        this.props.dispatch( { type: 'SET_FEEDBACK', payload: this.state.comment });
         this.addNewFeedback();
     }
 
     addNewFeedback = () => {
-        console.log(this.props.reduxState.feedbackReducer);
+        let feedback = [...this.props.reduxState.feedbackReducer, this.state.comment]
         axios({
             method: 'POST',
             url: '/feedback',
-            data: this.props.reduxState.feedbackReducer
+            data: feedback
         })
         .then( () => {
             this.props.dispatch( { type: 'RESET_STATE' } );
