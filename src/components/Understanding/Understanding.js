@@ -10,15 +10,15 @@ class Understanding extends Component {
         </header>
         <div>
             <input type="radio" id="understanding1" name="understanding" value="1"/>
-            <label for="understanding1">1</label>
+            <label htmlFor="understanding1">1</label>
             <input type="radio" id="understanding2" name="understanding" value="2"/>
-            <label for="understanding2">2</label>
+            <label htmlFor="understanding2">2</label>
             <input type="radio" id="understanding3" name="understanding" value="3"/>
-            <label for="understanding3">3</label>
+            <label htmlFor="understanding3">3</label>
             <input type="radio" id="understanding4" name="understanding" value="4"/>
-            <label for="understanding4">4</label>
+            <label htmlFor="understanding4">4</label>
             <input type="radio" id="understanding5" name="understanding" value="5"/>
-            <label for="understanding5">5</label>
+            <label htmlFor="understanding5">5</label>
             <ToSupported />
         </div>
     </div>   
