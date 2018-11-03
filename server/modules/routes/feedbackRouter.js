@@ -17,4 +17,15 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+    const sqlText = `SELECT * FROM feedback`;
+    pool.query(sqlText)
+    .then((response) => {
+        res.send(response.rows);
+    })
+    .catch((error) => {
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
