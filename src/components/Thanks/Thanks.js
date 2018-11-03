@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewFeedbackButton from './NewFeebackButton/NewFeedbackButton';
 
 class Thanks extends Component {
   render() {
@@ -7,7 +8,7 @@ class Thanks extends Component {
         <header>
             <h1>Thank you!</h1>
         </header>     
-        <button>Leave New Feedback</button>       
+        <NewFeedbackButton />       
     </div>   
     );
   }
