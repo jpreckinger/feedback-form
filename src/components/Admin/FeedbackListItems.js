@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import './Admin.css';
+import axios from 'axios';
 
 class Admin extends Component {
+
+    deleteFeedback = (id) => {
+        axios.delete(`/feedback/${id}`)
+        .then( (response) => {
+            this.props.getFeedback();
+        })
+        .catch( (error) => {
+            alert('Oops. There was an issue deleting feedback...')
+        })
+    }
 
     render() {
         return (
@@ -21,7 +32,9 @@ class Admin extends Component {
                         <td>{this.props.feedback.understanding}</td>
                         <td>{this.props.feedback.support}</td>
                         <td>{this.props.feedback.comments}</td>
-                        <td><button>Delete</button></td>
+                        <td><button onClick={() => this.deleteFeedback(this.props.feedback.id)}>
+                            Delete
+                        </button></td>
                     </tr>
                 </tbody>
             </table>

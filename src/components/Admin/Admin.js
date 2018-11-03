@@ -11,7 +11,7 @@ class Admin extends Component {
 
     getFeedback = () => {
         axios.get('/feedback')
-        .then((response) => {
+        .then( (response) => {
             this.setState({ feedback: response.data })
             console.log(this.state.feedback);
         })
@@ -34,7 +34,8 @@ class Admin extends Component {
                     {
                         this.state.feedback.map( feedback => 
                             <div key={feedback.id}>
-                                <FeedbackListItems feedback={feedback} />
+                                <FeedbackListItems feedback={feedback} 
+                                getFeedback={this.getFeedback} />
                             </div>
                     )}
                 </div>
