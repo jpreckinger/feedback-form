@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Admin.css';
 import axios from 'axios';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 class Admin extends Component {
 
@@ -13,6 +15,23 @@ class Admin extends Component {
             alert('Oops. There was an issue deleting feedback...')
         })
     }
+
+    submit = () => {
+        confirmAlert({
+          title: 'Confirm delete',
+          message: 'Are you sure you want to delete this?',
+          buttons: [
+            {
+              label: 'Yes, quite.',
+              onClick: () => this.deleteFeedback(this.props.feedback.id)
+            },
+            {
+              label: 'On second thought...',
+              onClick: () => alert('Your feedback is safe...for now')
+            }
+          ]
+        })
+      };
 
     render() {
         return (
@@ -32,7 +51,7 @@ class Admin extends Component {
                         <td>{this.props.feedback.understanding}</td>
                         <td>{this.props.feedback.support}</td>
                         <td>{this.props.feedback.comments}</td>
-                        <td><button onClick={() => this.deleteFeedback(this.props.feedback.id)}>
+                        <td><button onClick={this.submit}>
                             Delete
                         </button></td>
                     </tr>
