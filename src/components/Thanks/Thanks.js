@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+
 
 class Thanks extends Component {
 
@@ -9,12 +13,12 @@ class Thanks extends Component {
 
   render() {
     return (
-    <div>
-        <header>
+      <Card id="background">
+          <CardContent>
             <h1>Thank you!</h1>
-        </header>     
-        <button onClick={this.handleClick}>Leave New Feedback</button>       
-    </div>   
+            <Button onClick={this.handleClick}>Leave New Feedback</Button> 
+          </CardContent>      
+      </Card>   
     );
   }
 }

@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import FeedbackListItems from './FeedbackListItems';
 import axios from 'axios';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const styles = theme => ({
+    root: {
+      width: '100%',
+      marginTop: theme.spacing.unit * 3,
+      overflowX: 'auto',
+    },
+    table: {
+      minWidth: 700,
+    },
+  });
 
 class Admin extends Component {
 
@@ -30,18 +48,28 @@ class Admin extends Component {
                 <header>
                     <h1>Feedback Results</h1>
                 </header>  
-                <div>
-                    {
-                        this.state.feedback.map( feedback => 
-                            <div key={feedback.id}>
+                <Paper>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Feeling</TableCell>
+                                <TableCell>Comprehension</TableCell>
+                                <TableCell>Support</TableCell>
+                                <TableCell>Comments</TableCell>
+                                <TableCell>Delete</TableCell>
+                            </TableRow>
+                        </TableHead>
+                            {this.state.feedback.map( feedback => 
+                            <TableBody key={feedback.id}>
                                 <FeedbackListItems feedback={feedback} 
                                 getFeedback={this.getFeedback} />
-                            </div>
-                    )}
-                </div>
+                            </TableBody>
+                            )}
+                    </Table>    
+                </Paper>
             </div>   
         );
     }
 }
 
-export default withRouter(Admin);
+export default withRouter(withStyles(styles)(Admin));
