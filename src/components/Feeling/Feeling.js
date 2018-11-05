@@ -14,6 +14,10 @@ class Feeling extends Component {
         value: 0
     }
 
+    // this method will activiate on click of the next button,
+    // and will prevent the user from moving on without making a selection
+    // and if conditions are met, will dispatch their selection to redux and
+    // move them to the next page via the history prop.
     handleSubmit = (event) => {
         event.preventDefault();
         if( this.state.value === 0 ){
@@ -24,6 +28,7 @@ class Feeling extends Component {
         }
     }
 
+    // This method sets state equal to the value of the radio button selected
     handleChange = (event) => {
         this.setState({
            value: event.target.value

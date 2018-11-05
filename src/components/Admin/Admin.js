@@ -27,6 +27,7 @@ class Admin extends Component {
         feedback: []
     }
 
+    // This method will request the data from the database and set state to the data
     getFeedback = () => {
         axios.get('/feedback')
         .then( (response) => {
@@ -38,6 +39,7 @@ class Admin extends Component {
         })
     }
 
+    // This runs on render, and grabs the data again from the database.
     componentDidMount() {
         this.getFeedback();
     }

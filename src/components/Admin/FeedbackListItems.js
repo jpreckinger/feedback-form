@@ -11,6 +11,7 @@ import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
 
 class FeedbackListItems extends Component {
 
+    // This deletes a row of feedback from the database when the trashicon is clicked 
     deleteFeedback = (id) => {
         axios.delete(`/feedback/${id}`)
         .then( (response) => {
@@ -21,6 +22,7 @@ class FeedbackListItems extends Component {
         })
     }
 
+    // This method checks to make sure the user is intending to delete.
     submit = () => {
         confirmAlert({
           title: 'Confirm delete',
