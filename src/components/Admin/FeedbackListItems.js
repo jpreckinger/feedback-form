@@ -3,8 +3,11 @@ import './Admin.css';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
-class Admin extends Component {
+
+class FeedbackListItems extends Component {
 
     deleteFeedback = (id) => {
         axios.delete(`/feedback/${id}`)
@@ -35,31 +38,15 @@ class Admin extends Component {
 
     render() {
         return (
-            <table>
-                <thead>
-                    <tr>
-                        <td>Feeling</td>
-                        <td>Comprehension</td>
-                        <td>Support</td>
-                        <td>Comments</td>
-                        <td>Delete</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{this.props.feedback.feeling}</td>
-                        <td>{this.props.feedback.understanding}</td>
-                        <td>{this.props.feedback.support}</td>
-                        <td>{this.props.feedback.comments}</td>
-                        <td><button onClick={this.submit}>
-                            Delete
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
-               
+                <TableRow>
+                    <TableCell>{this.props.feedback.feeling}</TableCell>
+                    <TableCell>{this.props.feedback.understanding}</TableCell>
+                    <TableCell>{this.props.feedback.support}</TableCell>
+                    <TableCell>{this.props.feedback.comments}</TableCell>
+                    <TableCell><button onClick={this.submit}>Delete</button></TableCell>
+                </TableRow>
         );
     }
 }
 
-export default Admin;
+export default FeedbackListItems;

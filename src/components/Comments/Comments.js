@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class Comments extends Component {
 
@@ -41,19 +45,17 @@ class Comments extends Component {
 
     render() {
         return (
-            <div>
-                <header>
+            <Card id="background">
+                <CardContent>
                     <h2>Any comments you want to leave?</h2>
-                </header>
-                <div>
                     <form onSubmit={this.handleSubmit}>
-                        <label>Comments:</label>
-                        <input type="text" value={this.state.comment} 
+                        <TextField type="text" value={this.state.comment} 
                         onChange={this.handleChange}/>
-                        <button type="submit">Submit</button>
+                        <br/>
+                        <Button type="submit">Submit</Button>
                     </form>
-                </div>
-            </div>   
+                </CardContent>
+            </Card>   
     );
   }
 }
