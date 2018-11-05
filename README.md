@@ -33,11 +33,6 @@ Steps to get the development environment running.
 6. Create database using sample data from data.sql file
 
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
-
-
 ### Completed Features
 
 High level list of items completed.
@@ -52,9 +47,6 @@ High level list of items completed.
 - I would like to have the radio buttons respond to corresponding keystrokes
 - I would like to be able to go back in the form, and adjust state accordingly so the data still posts correctly
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Authors
 
