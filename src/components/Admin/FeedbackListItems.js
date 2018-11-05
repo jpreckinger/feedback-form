@@ -5,6 +5,8 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
+
 
 
 class FeedbackListItems extends Component {
@@ -43,7 +45,7 @@ class FeedbackListItems extends Component {
                     <TableCell>{this.props.feedback.understanding}</TableCell>
                     <TableCell>{this.props.feedback.support}</TableCell>
                     <TableCell>{this.props.feedback.comments}</TableCell>
-                    <TableCell><button onClick={this.submit}>Delete</button></TableCell>
+                    <TableCell><button onClick={this.submit}><DeleteForeverTwoToneIcon/></button></TableCell>
                 </TableRow>
         );
     }
